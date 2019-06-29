@@ -1,4 +1,4 @@
-package array;
+package array.base_array;
 
 /**
  * @Description: 数组泛型类

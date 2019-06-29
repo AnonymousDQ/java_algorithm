@@ -1,4 +1,4 @@
-package stack;
+package stack.link_stack;
 
 /**
  * @Description: 栈的链表结点

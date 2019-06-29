@@ -1,4 +1,4 @@
-package list;
+package list.link_list;
 
 import java.util.Random;
 

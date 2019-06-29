@@ -1,4 +1,4 @@
-package list;
+package list.link_list;
 
 /**
  * @Description: 单链表的插入、删除、查找操作

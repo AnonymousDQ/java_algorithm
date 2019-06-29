@@ -1,6 +1,4 @@
-package tree;
-
-import java.util.Random;
+package tree.binarysearchtree;
 
 /**
  * @ClassName: BinarySearchTree

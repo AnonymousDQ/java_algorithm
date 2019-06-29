@@ -1,4 +1,4 @@
-package list;
+package list.link_list;
 
 /**
  * @Description: 链表结点

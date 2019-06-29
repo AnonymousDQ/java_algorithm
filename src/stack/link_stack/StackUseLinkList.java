@@ -1,4 +1,4 @@
-package stack;
+package stack.link_stack;
 
 import java.util.Random;
 
