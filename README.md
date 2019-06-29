@@ -4,4 +4,5 @@
 - Stack
 - Queue
 - Sort
+- Tree
                     
