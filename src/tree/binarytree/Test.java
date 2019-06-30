@@ -37,16 +37,20 @@ public class Test {
         System.out.println(btree.isEmpty());
         //先序遍历递归 1 4 5 2 3 6 7
         btree.preOrderTraverse();
+        //先序遍历非递归（借助栈） 1 4 5 2 3 6 7
+        btree.preOrderByStack();
         //中序遍历递归 4 5 1 3 2 6 7
         btree.inOrderTraverse();
+        //中序遍历非递归（借助栈）4 5 1 3 2 6 7
+        btree.inOrderByStack();
         //后序遍历递归 5 4 3 7 6 2 1
         btree.postOrderTraverse();
-        //中序遍历非递归（借助栈）
-
-        //先序遍历递归（借助队列）
-
+        //后序遍历非递归（借助栈）5 4 3 7 6 2 1
+        btree.postOrderByStack();
+        //层次遍历（借助队列）1 4 2 5 3 6 7
+        btree.levelOrderByQueue();
         //在二叉树中查找某个值
-
+        System.out.println(btree.findKey(1));
         //二叉树的高度
         System.out.println(btree.getHeight());
         //二叉树的结点数量
