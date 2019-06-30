@@ -59,7 +59,7 @@ public class BinaryTree implements IBinaryTree{
       *@Description 辅助方法
       *@Author victor
       *@return 
-      *@Date 19-6-30 下午1:55
+      *@Date 19-6-30 下午5:59
     */
     private int getHeight(Node root){
         if(root==null){
