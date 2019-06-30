@@ -31,6 +31,12 @@ public class BinaryTree implements IBinaryTree{
         System.out.println("二叉树的节点数是：");
         return this.size(root);
     }
+    /**
+      *@Description 辅助方法
+      *@Author victor
+      *@return 
+      *@Date 19-6-30 下午1:55
+    */
     private int size(Node root){
         if(root==null){
             return 0;
@@ -49,6 +55,12 @@ public class BinaryTree implements IBinaryTree{
         System.out.println("二叉树的高度是：");
         return this.getHeight(root);
     }
+    /**
+      *@Description 辅助方法
+      *@Author victor
+      *@return 
+      *@Date 19-6-30 下午1:55
+    */
     private int getHeight(Node root){
         if(root==null){
             return 0;
@@ -159,7 +171,40 @@ public class BinaryTree implements IBinaryTree{
             System.out.print(root.value+" ");
         }
     }
-
+    
+    @Override
+    public void preOrderByStack() {
+        System.out.println("先序遍历非递归（借助栈）:");
+        this.preOrderByStack(root);
+        System.out.println();
+    }
+    /**
+      *@Description 辅助方法
+      *@Author victor
+      *@return 
+      *@Date 19-6-30 下午1:54
+    */
+    private void preOrderByStack(Node root){
+        if(root==null){
+            return;
+        }else{
+            //Stack<Node> stack= new Stack<Node>();
+            //创建栈，Deque双端队列在java中可以作为栈来使用的，栈操作建议使用它
+            Deque<Node> stack=new LinkedList<Node>();
+            Node current=root;//用临时操作变量current指向根节点1
+            Node temp=null;
+            while(current!=null||!stack.isEmpty()){//现在current指向root结点不为空，但是此时stack是等于空的，所以是或者
+                stack.push(current);//先把current存起来，根节点1入栈
+                current=current.leftChild;//4先出栈
+                while(current==null&&!stack.isEmpty()){
+                    current=stack.peek();//current每次指向栈顶元素，peek不出栈，只是读取
+                    temp=stack.pop();
+                    System.out.print(temp.value+" ");
+                    current=current.rightChild;
+                }
+            }
+        }
+    }
     @Override
     public void inOrderByStack() {
         System.out.println("中序遍历非递归（借助栈）:");
@@ -200,33 +245,7 @@ public class BinaryTree implements IBinaryTree{
             }
         }
     }
-    @Override
-    public void preOrderByStack() {
-        System.out.println("先序遍历非递归（借助栈）:");
-        this.preOrderByStack(root);
-        System.out.println();
-    }
-    private void preOrderByStack(Node root){
-        if(root==null){
-            return;
-        }else{
-            //Stack<Node> stack= new Stack<Node>();
-            //创建栈，Deque双端队列在java中可以作为栈来使用的，栈操作建议使用它
-            Deque<Node> stack=new LinkedList<Node>();
-            Node current=root;//用临时操作变量current指向根节点1
-            Node temp=null;
-            while(current!=null||!stack.isEmpty()){//现在current指向root结点不为空，但是此时stack是等于空的，所以是或者
-                stack.push(current);//先把current存起来，根节点1入栈
-                current=current.leftChild;//4先出栈
-                while(current==null&&!stack.isEmpty()){
-                    current=stack.peek();//current每次指向栈顶元素，peek不出栈，只是读取
-                    temp=stack.pop();
-                    System.out.print(temp.value+" ");
-                    current=current.rightChild;
-                }
-            }
-        }
-    }
+    
     @Override
     public void postOrderByStack() {
         System.out.println("后序遍历非递归(借助栈)：");
